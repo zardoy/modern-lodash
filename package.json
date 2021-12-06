@@ -1,26 +1,33 @@
 {
-  "devDependencies": {
-    "@types/lodash": "^4.14.172",
-    "@zardoy/xo-config": "^0.0.8",
-    "lodash": "^4.17.21",
-    "tsd": "^0.17.0",
-    "typescript": "^4.3.5"
-  },
-  "dependencies": {
-    "@zardoy/tsconfig": "^1.2.1",
-    "eslint": "^7",
-    "eslint-plugin-zardoy-config": "^0.1.0",
-    "generated-module": "^0.0.2",
-    "ts-morph": "^13.0.2",
-    "type-fest": "^2.0.0"
-  },
-  "prettier": {
-    "semi": false,
-    "singleQuote": true,
-    "proseWrap": "never",
-    "printWidth": 150,
-    "tabWidth": 4,
-    "trailingComma": "all",
-    "arrowParens": "avoid"
-  }
+    "name": "@zardoy/utils",
+    "version": "0.0.0-dev",
+    "author": "Vitaly Turovsky <vital2580@icloud.com>",
+    "license": "MIT",
+    "scripts": {
+        "prepublishOnly": "tsc"
+    },
+    "devDependencies": {
+        "@types/lodash": "^4.14.172",
+        "@zardoy/tsconfig": "^1.2.2",
+        "@zardoy/xo-config": "^0.0.8",
+        "generated-module": "^0.0.2",
+        "lodash": "^4.17.21",
+        "ts-morph": "^13.0.2",
+        "tsd": "^0.17.0",
+        "typescript": "^4.5.2"
+    },
+    "dependencies": {
+        "lodash.compact": "^3.0.1",
+        "rambda": "^6.9.0",
+        "type-fest": "^2.0.0"
+    },
+    "prettier": {
+        "semi": false,
+        "singleQuote": true,
+        "proseWrap": "never",
+        "printWidth": 150,
+        "tabWidth": 4,
+        "trailingComma": "all",
+        "arrowParens": "avoid"
+    }
 }

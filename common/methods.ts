@@ -1,5 +1,5 @@
 import { Except } from 'type-fest'
-import * as _ from 'lodash'
+import _ from 'lodash'
 
 type LodashMethods = keyof Omit<Except<typeof _, 'VERSION' | 'templateSettings'>, `sorted${string}`>
 
@@ -23,6 +23,11 @@ type LodashMethodsMap = {
               // feature is
               type: 'has-native'
               nativeReplacement: string | string[]
+          }
+        | {
+              // rambda has (probably with different arg order)
+              type: 'has-rambda'
+              rambdaMethod: string
           }
         | {
               type: // probably leaved as is. One typing. Probably compatible with original
