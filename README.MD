@@ -1,5 +1,8 @@
 # Strict Lodash
 
+> Spoiler: this is not only stricter versin of lodash, this library also adds utils that I was missing
+> I'll try to maintain the references to usages in popular repositories (like `vscode`)
+
 It meant to be stricted and lightweight version of [Lodash](http://lodash.com/).
 
 Also, this ilb contains helpers, that I didn't manage to find in other places.
