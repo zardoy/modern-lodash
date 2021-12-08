@@ -10,6 +10,8 @@ export const compact = <T>(array: (T | Falsey)[]): Exclude<T, Falsey> => lCompac
 /** String if. Previously named as strIf */
 export const templateIf = (condition: any, string: string) => (condition ? string : '')
 
+export const oneOf = <T, K extends T>(value: T, ...values: [K, ...K[]]): value is K => values.includes(value as any)
+
 /** @throws if not expected */
 export const ensureType = (expectedType: RambdaTypes, name?: string) => {
     const actualType = type(expectedType)

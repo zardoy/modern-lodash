@@ -11,8 +11,6 @@ export const difference = <T>(sourceValues: T[], ...valuesToExclude: T[][]): T[]
 /** You most probably want this method for better TS typings */
 export const fromPairs: <T extends [string, any][]>(obj: T) => Record<T[number][0], T[number][1]> = Object.fromEntries
 
-export const oneOf = <T, K extends T>(value: T, ...values: [K, ...K[]]): value is K => values.includes(value as any)
-
 // export const intersection = <T, K>(arr1: T[], arr2: K[]): Extract<T, K> => null as any;
 
 // export const union = <K>(...arrs: K[][]): K[] => null as any
