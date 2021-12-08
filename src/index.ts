@@ -12,6 +12,8 @@ export const templateIf = (condition: any, string: string) => (condition ? strin
 
 export const oneOf = <T, K extends T>(value: T, ...values: [K, ...K[]]): value is K => values.includes(value as any)
 
+export const ensureArray = <T>(arg: T | T[]): T[] => (Array.isArray(arg) ? arg : [arg])
+
 /** @throws if not expected */
 export const ensureType = (expectedType: RambdaTypes, name?: string) => {
     const actualType = type(expectedType)
