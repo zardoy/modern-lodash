@@ -9,8 +9,8 @@
     },
     "devDependencies": {
         "@types/lodash": "^4.14.172",
+        "@types/node": "^18.0.0",
         "@zardoy/tsconfig": "^1.2.2",
-        "@zardoy/xo-config": "^0.0.8",
         "generated-module": "^0.0.2",
         "lodash": "^4.17.21",
         "ts-morph": "^13.0.2",
