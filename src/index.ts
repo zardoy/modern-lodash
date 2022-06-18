@@ -1,6 +1,8 @@
 import { RambdaTypes, type } from 'rambda'
 import lCompact from 'lodash.compact'
 
+// misc
+
 type Falsey = false | null | undefined | 0 | ''
 /**
  * @returns Array **without** falsey values (`false`, `0`, `""`, `null`, `undefined`, and `NaN`)
@@ -37,5 +39,33 @@ export const ensureType = (expectedType: RambdaTypes, name?: string) => {
     if (actualType === expectedType) return
     throw new Error(`Expected type ${expectedType}${templateIf(name, ` from ${name}`)}. Got ${actualType}`)
 }
+
+// string
+
+export const stringTrimUntil = (input: string, char: string) => {
+    const charIndex = input.indexOf(char)
+    return charIndex === -1 ? input : input.slice(0, charIndex)
+}
+
+export const clipByLastIndex = (input: string, chars: string[]) => {
+    for (const char of chars) {
+        const index = input.lastIndexOf(char)
+        input = /* clip exclusively */ input.slice(index === -1 ? 0 : index + 1)
+    }
+
+    return input
+}
+
+/**
+ * @param regexps Must have a least one capture group
+ */
+export const clipByRegexps = (input: string, regexps: RegExp[]) => {
+    for (const regexp of regexps) input = input.match(regexp)?.[1] ?? input
+    return input
+}
+
+export const lowerCaseFirst = (input: string) => input[0]!.toLowerCase() + input.slice(1)
+
+// other
 
 export { omitObj, pickObj } from './pickOmit'
