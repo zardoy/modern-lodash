@@ -32,6 +32,11 @@ export function assignDefined<T extends Record<string, any>, K extends Partial<T
     Object.assign(target, filterObjUndefined(properties))
 }
 
+export const ensureHasProp = <T extends Record<string, any>, K extends keyof T>(obj: T, key: K, initValue: T[K]) => {
+    if (!(key in obj)) obj[key] = initValue
+    return obj[key]!
+}
+
 // misc
 
 /** @throws if not expected */
