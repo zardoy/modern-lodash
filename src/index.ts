@@ -7,7 +7,7 @@ type Falsey = false | null | undefined | 0 | ''
 /**
  * @returns Array **without** falsey values (`false`, `0`, `""`, `null`, `undefined`, and `NaN`)
  */
-export const compact = <T>(array: (T | Falsey)[]): Exclude<T, Falsey> => lCompact(array)
+export const compact = <T>(array: (T | Falsey)[]): Exclude<T, Falsey>[] => lCompact(array)
 
 export const oneOf = <T, K extends T>(value: T, ...values: [K, ...K[]]): value is K => values.includes(value as any)
 
