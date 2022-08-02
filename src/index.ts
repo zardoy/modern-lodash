@@ -4,6 +4,17 @@ import lCompact from 'lodash.compact'
 // array
 
 type Falsey = false | null | undefined | 0 | ''
+
+export const findCustomArray = <T, R>(array: T[], predicate: (item: T, index: number, array: T[]) => R): Exclude<R, Falsey> | undefined => {
+    let lastResult: R | undefined
+    const foundElem = array.find((item, index, array) => {
+        lastResult = predicate(item, index, array)
+        return lastResult
+    })
+    if (foundElem) return lastResult as Exclude<R, Falsey>
+    return undefined
+}
+
 /**
  * @returns Array **without** falsey values (`false`, `0`, `""`, `null`, `undefined`, and `NaN`)
  */
