@@ -89,3 +89,5 @@ export const lowerCaseFirst = (input: string) => input[0]!.toLowerCase() + input
 // other
 
 export { omitObj, pickObj } from './pickOmit'
+
+export * from './stringWithPositions'
